@@ -12,25 +12,13 @@ class AppRouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case dataLoadingRoute:
-        return MaterialPageRoute(
-          builder: (_) => const DataLoadingPage(),
-          settings: settings,
-        );
+        return _buildNoAnimationRoute(const DataLoadingPage(), settings);
       case landingRoute:
-        return MaterialPageRoute(
-          builder: (_) => const LandingPage(),
-          settings: settings,
-        );
+        return _buildNoAnimationRoute(const LandingPage(), settings);
       case loginRoute:
-        return MaterialPageRoute(
-          builder: (_) => const LoginPage(),
-          settings: settings,
-        );
+        return _buildNoAnimationRoute(const LoginPage(), settings);
       case homeRoute:
-        return MaterialPageRoute(
-          builder: (_) => const HomePage(),
-          settings: settings,
-        );
+        return _buildNoAnimationRoute(const HomePage(), settings);
       default:
         return MaterialPageRoute(
           builder: (_) => SafeArea(
@@ -40,7 +28,19 @@ class AppRouteGenerator {
               ),
             ),
           ),
+          settings: settings,
         );
     }
+  }
+
+  static PageRouteBuilder<dynamic> _buildNoAnimationRoute(
+      Widget page, RouteSettings settings) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => page,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return child;
+      },
+      settings: settings,
+    );
   }
 }
