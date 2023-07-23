@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -71,4 +73,46 @@ void pushNamed(BuildContext context, String route) {
 
 void pushReplacementNamed(BuildContext context, String route) {
   Navigator.pushReplacementNamed(context, route);
+}
+
+void showNewVersionDialog(BuildContext context) {
+  showDialog<dynamic>(
+    context: context,
+    barrierDismissible: false,
+    builder: (context) {
+      return WillPopScope(
+        onWillPop: () async => false,
+        child: AlertDialog(
+          content: const Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Nova atualização disponível, por favor atualize o aplicativo na sua loja',
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 10),
+              Text(
+                'Esta ação requer para continuar a usar o aplicativo',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 12,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).pop();
+                WidgetsBinding.instance.addPostFrameCallback((_) => exit(0));
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        ),
+      );
+    },
+  );
 }

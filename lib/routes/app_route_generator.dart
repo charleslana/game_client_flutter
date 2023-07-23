@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:game_client/pages/login_page.dart';
 
 import '../pages/home_page.dart';
 import '../pages/landing_page.dart';
+import '../pages/login_page.dart';
 import 'app_routes.dart';
 
 class AppRouteGenerator {

@@ -28,6 +28,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
     Future.delayed(const Duration(milliseconds: 2000), () {
       pop(context);
       pushReplacementNamed(context, loginRoute);
+      // showNewVersionDialog(context);
     });
   }
 

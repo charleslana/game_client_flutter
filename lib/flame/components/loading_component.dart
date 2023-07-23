@@ -1,7 +1,8 @@
 import 'package:flame/cache.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
-import 'package:game_client/data/image_data.dart';
+
+import '../../data/image_data.dart';
 
 class LoadingComponent extends PositionComponent {
   LoadingComponent({required this.screenSize});
