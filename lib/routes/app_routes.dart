@@ -1,3 +1,4 @@
-const String landingRoute = '/';
+const String dataLoadingRoute = '/';
+const String landingRoute = '/landing';
 const String loginRoute = '/login';
 const String homeRoute = '/home';

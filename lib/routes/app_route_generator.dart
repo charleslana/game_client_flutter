@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../pages/data_loading_page.dart';
 import '../pages/home_page.dart';
 import '../pages/landing_page.dart';
 import '../pages/login_page.dart';
@@ -10,6 +11,11 @@ class AppRouteGenerator {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case dataLoadingRoute:
+        return MaterialPageRoute(
+          builder: (_) => const DataLoadingPage(),
+          settings: settings,
+        );
       case landingRoute:
         return MaterialPageRoute(
           builder: (_) => const LandingPage(),
