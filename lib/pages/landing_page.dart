@@ -26,7 +26,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
     loading(context);
     ref.read(loadingProvider.notifier).value = 'Conectando no servidor';
     Future.delayed(const Duration(milliseconds: 2000), () {
-      pop(context);
+      popUntil(context);
       pushReplacementNamed(context, loginRoute);
       // showNewVersionDialog(context);
     });

@@ -67,6 +67,10 @@ void pop(BuildContext context) {
   Navigator.pop(context);
 }
 
+void popUntil(BuildContext context) {
+  Navigator.of(context).popUntil((route) => route.isFirst);
+}
+
 void pushNamed(BuildContext context, String route) {
   Navigator.pushNamed(context, route);
 }
@@ -75,8 +79,8 @@ void pushReplacementNamed(BuildContext context, String route) {
   Navigator.pushReplacementNamed(context, route);
 }
 
-void showNewVersionDialog(BuildContext context) {
-  showDialog<dynamic>(
+Future<void> showNewVersionDialog(BuildContext context) async {
+  await showDialog<dynamic>(
     context: context,
     barrierDismissible: false,
     builder: (context) {

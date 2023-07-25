@@ -33,8 +33,8 @@ class _LoginPageState extends State<LoginPage> {
     });
   }
 
-  void showPlayDialog() {
-    showModalBottomSheet<dynamic>(
+  Future<void> showPlayDialog() async {
+    await showModalBottomSheet<dynamic>(
       context: context,
       builder: (context) {
         return Padding(
@@ -48,11 +48,15 @@ class _LoginPageState extends State<LoginPage> {
             alignment: WrapAlignment.center,
             children: [
               OutlinedButton(
-                onPressed: showRegisterDialog,
+                onPressed: () async {
+                  await showRegisterDialog();
+                },
                 child: const Text('Cadastrar uma nova conta'),
               ),
               ElevatedButton(
-                onPressed: showLoginDialog,
+                onPressed: () async {
+                  await showLoginDialog();
+                },
                 child: const Text('Entrar'),
               ),
             ],
@@ -62,9 +66,9 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  void showRegisterDialog() {
-    pop(context);
-    showModalBottomSheet<dynamic>(
+  Future<void> showRegisterDialog() async {
+    popUntil(context);
+    await showModalBottomSheet<dynamic>(
       isScrollControlled: true,
       context: context,
       builder: (context) {
@@ -137,9 +141,9 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  void showLoginDialog() {
-    pop(context);
-    showModalBottomSheet<dynamic>(
+  Future<void> showLoginDialog() async {
+    popUntil(context);
+    await showModalBottomSheet<dynamic>(
       isScrollControlled: true,
       context: context,
       builder: (context) {
@@ -189,7 +193,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(
-                  onPressed: login,
+                  onPressed: () async {
+                    await login();
+                  },
                   child: const Text('Entrar'),
                 ),
               ],
@@ -237,7 +243,9 @@ class _LoginPageState extends State<LoginPage> {
               Center(
                 child: WhiteButtonComponent(
                   text: 'Jogar',
-                  callback: showPlayDialog,
+                  callback: () async {
+                    await showPlayDialog();
+                  },
                 ),
               ),
               const Align(
