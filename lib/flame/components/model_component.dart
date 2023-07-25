@@ -12,9 +12,9 @@ class ModelComponent extends PositionComponent
   @override
   FutureOr<void> onLoad() {
     debugMode = true;
-    size = Vector2.all(88);
+    size = Vector2.all(gameRef.size.x * 0.1);
     position =
-        Vector2(gameRef.size.x - gameRef.size.y / 6, gameRef.size.y / 25);
+        Vector2(gameRef.size.x - gameRef.size.y / 4, gameRef.size.y / 25);
     return super.onLoad();
   }
 

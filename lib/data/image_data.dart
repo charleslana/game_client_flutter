@@ -9,3 +9,4 @@ const String icon2 = 'assets/images/layout/icons/icon2.png';
 const String icon3 = 'assets/images/layout/icons/icon3.png';
 const String selectButton = 'assets/images/layout/select_button.png';
 const String stage1 = 'assets/images/stages/1.png';
+const String avatar1 = 'assets/images/avatar/1.png';
