@@ -3,6 +3,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 import '../components/white_button_component.dart';
 import '../data/image_data.dart';
+import '../routes/app_routes.dart';
 import '../utils/theme_util.dart';
 import '../utils/utils.dart';
 
@@ -188,7 +189,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(
-                  onPressed: () => {},
+                  onPressed: () => pushReplacementNamed(context, homeRoute),
                   child: const Text('Entrar'),
                 ),
               ],
@@ -201,69 +202,71 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(loginBg),
-            fit: BoxFit.cover,
+    return SafeArea(
+      child: Material(
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(loginBg),
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-        child: Stack(
-          children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  top: 10,
-                ),
-                child: Text(
-                  'Battle RPG',
-                  style: garudaBoldStyle().copyWith(
-                    fontSize: 50,
-                    color: Colors.white,
-                    shadows: shadows,
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.topCenter,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    top: 10,
+                  ),
+                  child: Text(
+                    'Battle RPG',
+                    style: garudaBoldStyle().copyWith(
+                      fontSize: 50,
+                      color: Colors.white,
+                      shadows: shadows,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Center(
-              child: WhiteButtonComponent(
-                text: 'Jogar',
-                callback: showPlayDialog,
-              ),
-            ),
-            const Align(
-              alignment: Alignment.bottomLeft,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  bottom: 4,
-                  left: 4,
+              Center(
+                child: WhiteButtonComponent(
+                  text: 'Jogar',
+                  callback: showPlayDialog,
                 ),
-                child: Text(
-                  'CL Games',
-                  style: TextStyle(
-                    color: Colors.white,
+              ),
+              const Align(
+                alignment: Alignment.bottomLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    bottom: 4,
+                    left: 4,
+                  ),
+                  child: Text(
+                    'CL Games',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 4,
-                  right: 4,
-                ),
-                child: Text(
-                  'Versão: $version',
-                  style: const TextStyle(
-                    color: Colors.white,
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 4,
+                    right: 4,
+                  ),
+                  child: Text(
+                    'Versão: $version',
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -24,11 +24,19 @@ class _DataLoadingPageState extends State<DataLoadingPage> {
       precacheImage(const AssetImage(loadingAnimated), context),
       precacheImage(const AssetImage(loginBg), context),
       precacheImage(const AssetImage(whiteButton), context),
+      precacheImage(const AssetImage(homeBg), context),
+      precacheImage(const AssetImage(floatButton), context),
+      precacheImage(const AssetImage(selectButton), context),
+      precacheImage(const AssetImage(icon1), context),
+      precacheImage(const AssetImage(icon2), context),
+      precacheImage(const AssetImage(icon3), context),
     ]).then((_) => pushReplacementNamed(context, landingRoute));
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: CircularProgressIndicator());
+    return const SafeArea(
+      child: Center(child: CircularProgressIndicator()),
+    );
   }
 }

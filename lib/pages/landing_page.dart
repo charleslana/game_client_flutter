@@ -34,11 +34,13 @@ class _LandingPageState extends ConsumerState<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(landingBg),
-          fit: BoxFit.cover,
+    return SafeArea(
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(landingBg),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
