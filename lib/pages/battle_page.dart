@@ -8,10 +8,10 @@ class BattlePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GameWidget<BattleGame>(
-      game: BattleGame(context),
-      loadingBuilder: (context) => const SafeArea(
-        child: Center(
+    return SafeArea(
+      child: GameWidget<BattleGame>(
+        game: BattleGame(context),
+        loadingBuilder: (context) => const Center(
           child: CircularProgressIndicator(),
         ),
       ),

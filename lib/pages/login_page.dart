@@ -189,7 +189,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(
-                  onPressed: () => pushReplacementNamed(context, homeRoute),
+                  onPressed: login,
                   child: const Text('Entrar'),
                 ),
               ],
@@ -198,6 +198,11 @@ class _LoginPageState extends State<LoginPage> {
         );
       },
     );
+  }
+
+  Future<void> login() async {
+    pop(context);
+    pushReplacementNamed(context, homeRoute);
   }
 
   @override
