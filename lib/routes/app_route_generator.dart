@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../pages/battle_page.dart';
 import '../pages/data_loading_page.dart';
 import '../pages/home_page.dart';
 import '../pages/landing_page.dart';
@@ -19,6 +20,8 @@ class AppRouteGenerator {
         return _buildNoAnimationRoute(const LoginPage(), settings);
       case homeRoute:
         return _buildNoAnimationRoute(const HomePage(), settings);
+      case battleGameRoute:
+        return _buildNoAnimationRoute(const BattlePage(), settings);
       default:
         return MaterialPageRoute(
           builder: (_) => SafeArea(

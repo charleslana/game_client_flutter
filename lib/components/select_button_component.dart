@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../data/image_data.dart';
+import '../routes/app_routes.dart';
+import '../utils/utils.dart';
 
 class SelectButtonComponent extends StatelessWidget {
   const SelectButtonComponent({
@@ -14,7 +16,10 @@ class SelectButtonComponent extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: GestureDetector(
-        onTap: () => {},
+        onTap: () => pushReplacementNamed(
+          context,
+          battleGameRoute,
+        ),
         child: Container(
           width: size.height * 0.3,
           height: size.height * 0.3,
