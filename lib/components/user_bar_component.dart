@@ -8,11 +8,11 @@ class UserBarComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final double avatarRadius = size.height * 0.1;
+    final double avatarRadius = size.height * 0.09;
 
     return Container(
       width: double.infinity,
-      height: size.height * 0.2,
+      height: size.height * 0.18,
       color: Colors.grey[800],
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
