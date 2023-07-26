@@ -31,6 +31,9 @@ class _DataLoadingPageState extends State<DataLoadingPage> {
       precacheImage(const AssetImage(icon2), context),
       precacheImage(const AssetImage(icon3), context),
       precacheImage(const AssetImage(avatar1), context),
+      precacheImage(const AssetImage(candy), context),
+      precacheImage(const AssetImage(gold), context),
+      precacheImage(const AssetImage(ruby), context),
     ]).then((_) => pushReplacementNamed(context, landingRoute));
   }
 

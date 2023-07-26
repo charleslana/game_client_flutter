@@ -42,37 +42,77 @@ class UserBarComponent extends StatelessWidget {
               ],
             ),
           ),
-          const Expanded(
+          Expanded(
             child: Padding(
-              padding: EdgeInsets.all(5),
+              padding: const EdgeInsets.all(8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    '1 - Energia',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                  SizedBox(width: 5),
-                  Text(
-                    '2 - Ouro',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                  SizedBox(width: 5),
-                  Text(
-                    '3 - Diamante',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
+                  _candy('100 / 100', size),
+                  const SizedBox(width: 10),
+                  _currency(gold, 0, size),
+                  const SizedBox(width: 10),
+                  _currency(ruby, 999, size),
                 ],
               ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _currency(String image, int value, Size size) {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 10,
+        vertical: 5,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.grey[700],
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Row(
+        children: [
+          Image.asset(
+            image,
+            height: size.height * 0.3,
+          ),
+          const SizedBox(width: 5),
+          Text(
+            value.toString(),
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _candy(String value, Size size) {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 10,
+        vertical: 5,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.grey[700],
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Row(
+        children: [
+          Image.asset(
+            candy,
+            height: size.height * 0.3,
+          ),
+          const SizedBox(width: 5),
+          Text(
+            value,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
             ),
           ),
         ],

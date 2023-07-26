@@ -10,3 +10,6 @@ const String icon3 = 'assets/images/layout/icons/icon3.png';
 const String selectButton = 'assets/images/layout/select_button.png';
 const String stage1 = 'assets/images/stages/1.png';
 const String avatar1 = 'assets/images/avatar/1.png';
+const String candy = 'assets/images/layout/candy.png';
+const String gold = 'assets/images/layout/gold.png';
+const String ruby = 'assets/images/layout/ruby.png';
