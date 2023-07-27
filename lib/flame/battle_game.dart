@@ -559,6 +559,7 @@ class BattleGame extends FlameGame {
               ElevatedButton(
                 child: const Text('Ok'),
                 onPressed: () {
+                  popUntil(context);
                   pushReplacementNamed(context, homeRoute);
                 },
               ),
