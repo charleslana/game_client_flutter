@@ -103,10 +103,6 @@ class CharacterPositionComponent extends PositionComponent
     return super.onLoad();
   }
 
-  // void changePriority(int value) {
-  //   priority = value;
-  // }
-
   Vector2 getStartingPosition() {
     return _starterPosition;
   }
